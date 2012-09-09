@@ -1,0 +1,338 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		649E82C215FC36060077EEF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649E82C115FC36060077EEF7 /* UIKit.framework */; };
+		649E82C415FC36060077EEF7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649E82C315FC36060077EEF7 /* Foundation.framework */; };
+		649E82C615FC36060077EEF7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649E82C515FC36060077EEF7 /* CoreGraphics.framework */; };
+		649E82CC15FC36060077EEF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 649E82CA15FC36060077EEF7 /* InfoPlist.strings */; };
+		649E82CE15FC36060077EEF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 649E82CD15FC36060077EEF7 /* main.m */; };
+		649E82D215FC36060077EEF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 649E82D115FC36060077EEF7 /* AppDelegate.m */; };
+		649E82DA15FC36290077EEF7 /* GoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649E82D915FC36290077EEF7 /* GoViewController.m */; };
+		649E82E615FC3D8C0077EEF7 /* DialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649E82E515FC3D8C0077EEF7 /* DialViewController.m */; };
+		649E82E815FC42A40077EEF7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649E82E715FC42A40077EEF7 /* QuartzCore.framework */; };
+		649E82EB15FC453F0077EEF7 /* goButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 649E82E915FC453F0077EEF7 /* goButton@2x.png */; };
+		649E82EC15FC453F0077EEF7 /* goButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 649E82EA15FC453F0077EEF7 /* goButton.png */; };
+		649E82EF15FC54ED0077EEF7 /* GaugeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 649E82EE15FC54ED0077EEF7 /* GaugeView.m */; };
+		649E830315FC8AC80077EEF7 /* yellowpie.png in Resources */ = {isa = PBXBuildFile; fileRef = 649E82FF15FC8AC80077EEF7 /* yellowpie.png */; };
+		649E830415FC8AC80077EEF7 /* whitepie.png in Resources */ = {isa = PBXBuildFile; fileRef = 649E830015FC8AC80077EEF7 /* whitepie.png */; };
+		649E830515FC8AC80077EEF7 /* redpie.png in Resources */ = {isa = PBXBuildFile; fileRef = 649E830115FC8AC80077EEF7 /* redpie.png */; };
+		649E830615FC8AC80077EEF7 /* greenpie.png in Resources */ = {isa = PBXBuildFile; fileRef = 649E830215FC8AC80077EEF7 /* greenpie.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		649E82BD15FC36060077EEF7 /* goskate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goskate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		649E82C115FC36060077EEF7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		649E82C315FC36060077EEF7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		649E82C515FC36060077EEF7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		649E82C915FC36060077EEF7 /* goskate-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "goskate-Info.plist"; sourceTree = "<group>"; };
+		649E82CB15FC36060077EEF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		649E82CD15FC36060077EEF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		649E82CF15FC36060077EEF7 /* goskate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "goskate-Prefix.pch"; sourceTree = "<group>"; };
+		649E82D015FC36060077EEF7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		649E82D115FC36060077EEF7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		649E82D815FC36290077EEF7 /* GoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoViewController.h; sourceTree = "<group>"; };
+		649E82D915FC36290077EEF7 /* GoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoViewController.m; sourceTree = "<group>"; };
+		649E82E415FC3D8C0077EEF7 /* DialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialViewController.h; sourceTree = "<group>"; };
+		649E82E515FC3D8C0077EEF7 /* DialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialViewController.m; sourceTree = "<group>"; };
+		649E82E715FC42A40077EEF7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		649E82E915FC453F0077EEF7 /* goButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "goButton@2x.png"; sourceTree = "<group>"; };
+		649E82EA15FC453F0077EEF7 /* goButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goButton.png; sourceTree = "<group>"; };
+		649E82ED15FC54EC0077EEF7 /* GaugeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaugeView.h; sourceTree = "<group>"; };
+		649E82EE15FC54ED0077EEF7 /* GaugeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaugeView.m; sourceTree = "<group>"; };
+		649E82FF15FC8AC80077EEF7 /* yellowpie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowpie.png; sourceTree = "<group>"; };
+		649E830015FC8AC80077EEF7 /* whitepie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whitepie.png; sourceTree = "<group>"; };
+		649E830115FC8AC80077EEF7 /* redpie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redpie.png; sourceTree = "<group>"; };
+		649E830215FC8AC80077EEF7 /* greenpie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenpie.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		649E82BA15FC36060077EEF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				649E82E815FC42A40077EEF7 /* QuartzCore.framework in Frameworks */,
+				649E82C215FC36060077EEF7 /* UIKit.framework in Frameworks */,
+				649E82C415FC36060077EEF7 /* Foundation.framework in Frameworks */,
+				649E82C615FC36060077EEF7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		649E82B215FC36060077EEF7 = {
+			isa = PBXGroup;
+			children = (
+				649E82E715FC42A40077EEF7 /* QuartzCore.framework */,
+				649E82C715FC36060077EEF7 /* goskate */,
+				649E82C015FC36060077EEF7 /* Frameworks */,
+				649E82BE15FC36060077EEF7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		649E82BE15FC36060077EEF7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				649E82BD15FC36060077EEF7 /* goskate.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		649E82C015FC36060077EEF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				649E82C115FC36060077EEF7 /* UIKit.framework */,
+				649E82C315FC36060077EEF7 /* Foundation.framework */,
+				649E82C515FC36060077EEF7 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		649E82C715FC36060077EEF7 /* goskate */ = {
+			isa = PBXGroup;
+			children = (
+				649E82F215FC55170077EEF7 /* Images */,
+				649E82F015FC54F80077EEF7 /* Views */,
+				649E82F115FC54FE0077EEF7 /* View Controllers */,
+				649E82C815FC36060077EEF7 /* Supporting Files */,
+			);
+			path = goskate;
+			sourceTree = "<group>";
+		};
+		649E82C815FC36060077EEF7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				649E82C915FC36060077EEF7 /* goskate-Info.plist */,
+				649E82CA15FC36060077EEF7 /* InfoPlist.strings */,
+				649E82CD15FC36060077EEF7 /* main.m */,
+				649E82CF15FC36060077EEF7 /* goskate-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		649E82F015FC54F80077EEF7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				649E82ED15FC54EC0077EEF7 /* GaugeView.h */,
+				649E82EE15FC54ED0077EEF7 /* GaugeView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		649E82F115FC54FE0077EEF7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				649E82E415FC3D8C0077EEF7 /* DialViewController.h */,
+				649E82E515FC3D8C0077EEF7 /* DialViewController.m */,
+				649E82D815FC36290077EEF7 /* GoViewController.h */,
+				649E82D915FC36290077EEF7 /* GoViewController.m */,
+				649E82D015FC36060077EEF7 /* AppDelegate.h */,
+				649E82D115FC36060077EEF7 /* AppDelegate.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		649E82F215FC55170077EEF7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				649E82E915FC453F0077EEF7 /* goButton@2x.png */,
+				649E82EA15FC453F0077EEF7 /* goButton.png */,
+				649E830215FC8AC80077EEF7 /* greenpie.png */,
+				649E830115FC8AC80077EEF7 /* redpie.png */,
+				649E830015FC8AC80077EEF7 /* whitepie.png */,
+				649E82FF15FC8AC80077EEF7 /* yellowpie.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		649E82BC15FC36060077EEF7 /* goskate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 649E82D515FC36060077EEF7 /* Build configuration list for PBXNativeTarget "goskate" */;
+			buildPhases = (
+				649E82B915FC36060077EEF7 /* Sources */,
+				649E82BA15FC36060077EEF7 /* Frameworks */,
+				649E82BB15FC36060077EEF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = goskate;
+			productName = goskate;
+			productReference = 649E82BD15FC36060077EEF7 /* goskate.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		649E82B415FC36060077EEF7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = shoddie;
+			};
+			buildConfigurationList = 649E82B715FC36060077EEF7 /* Build configuration list for PBXProject "goskate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 649E82B215FC36060077EEF7;
+			productRefGroup = 649E82BE15FC36060077EEF7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				649E82BC15FC36060077EEF7 /* goskate */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		649E82BB15FC36060077EEF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				649E82CC15FC36060077EEF7 /* InfoPlist.strings in Resources */,
+				649E82EB15FC453F0077EEF7 /* goButton@2x.png in Resources */,
+				649E82EC15FC453F0077EEF7 /* goButton.png in Resources */,
+				649E830315FC8AC80077EEF7 /* yellowpie.png in Resources */,
+				649E830415FC8AC80077EEF7 /* whitepie.png in Resources */,
+				649E830515FC8AC80077EEF7 /* redpie.png in Resources */,
+				649E830615FC8AC80077EEF7 /* greenpie.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		649E82B915FC36060077EEF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				649E82CE15FC36060077EEF7 /* main.m in Sources */,
+				649E82D215FC36060077EEF7 /* AppDelegate.m in Sources */,
+				649E82DA15FC36290077EEF7 /* GoViewController.m in Sources */,
+				649E82E615FC3D8C0077EEF7 /* DialViewController.m in Sources */,
+				649E82EF15FC54ED0077EEF7 /* GaugeView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		649E82CA15FC36060077EEF7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				649E82CB15FC36060077EEF7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		649E82D315FC36060077EEF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		649E82D415FC36060077EEF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		649E82D615FC36060077EEF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "goskate/goskate-Prefix.pch";
+				INFOPLIST_FILE = "goskate/goskate-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		649E82D715FC36060077EEF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "goskate/goskate-Prefix.pch";
+				INFOPLIST_FILE = "goskate/goskate-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		649E82B715FC36060077EEF7 /* Build configuration list for PBXProject "goskate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				649E82D315FC36060077EEF7 /* Debug */,
+				649E82D415FC36060077EEF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		649E82D515FC36060077EEF7 /* Build configuration list for PBXNativeTarget "goskate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				649E82D615FC36060077EEF7 /* Debug */,
+				649E82D715FC36060077EEF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 649E82B415FC36060077EEF7 /* Project object */;
+}
