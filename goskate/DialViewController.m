@@ -75,15 +75,19 @@
 }
 
 - (void)changeGauge {
-    double change = (((double)arc4random()/UINT_MAX)*10.0)-5.0;
-    [self.gaugeView changePosition:(self.gaugeView.percent+change)];
+    static bool change = NO;
+    change = !change;
+    if (change)
+        [self.gaugeView changePosition:(self.gaugeView.percent)-90];
+    else
+        [self.gaugeView changePosition:(self.gaugeView.percent)+90];
 }
 
 - (void)stopPressed {
-    static double position = 50.0;
+    static double position = 99.0;
     [self.gaugeView changePosition:position];
     
-    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(changeGauge) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(changeGauge) userInfo:nil repeats:YES];
     
     //[self.navigationController popToRootViewControllerAnimated:NO];
     
