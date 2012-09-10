@@ -23,6 +23,8 @@
 		649E830415FC8AC80077EEF7 /* whitepie.png in Resources */ = {isa = PBXBuildFile; fileRef = 649E830015FC8AC80077EEF7 /* whitepie.png */; };
 		649E830515FC8AC80077EEF7 /* redpie.png in Resources */ = {isa = PBXBuildFile; fileRef = 649E830115FC8AC80077EEF7 /* redpie.png */; };
 		649E830615FC8AC80077EEF7 /* greenpie.png in Resources */ = {isa = PBXBuildFile; fileRef = 649E830215FC8AC80077EEF7 /* greenpie.png */; };
+		649E830E15FDAEE30077EEF7 /* LocationManagerStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 649E830D15FDAEE30077EEF7 /* LocationManagerStore.m */; };
+		649E831715FDB0210077EEF7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649E831615FDB0210077EEF7 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,9 @@
 		649E830015FC8AC80077EEF7 /* whitepie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whitepie.png; sourceTree = "<group>"; };
 		649E830115FC8AC80077EEF7 /* redpie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redpie.png; sourceTree = "<group>"; };
 		649E830215FC8AC80077EEF7 /* greenpie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greenpie.png; sourceTree = "<group>"; };
+		649E830C15FDAEE30077EEF7 /* LocationManagerStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManagerStore.h; sourceTree = "<group>"; };
+		649E830D15FDAEE30077EEF7 /* LocationManagerStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManagerStore.m; sourceTree = "<group>"; };
+		649E831615FDB0210077EEF7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				649E831715FDB0210077EEF7 /* CoreLocation.framework in Frameworks */,
 				649E82E815FC42A40077EEF7 /* QuartzCore.framework in Frameworks */,
 				649E82C215FC36060077EEF7 /* UIKit.framework in Frameworks */,
 				649E82C415FC36060077EEF7 /* Foundation.framework in Frameworks */,
@@ -69,7 +75,6 @@
 		649E82B215FC36060077EEF7 = {
 			isa = PBXGroup;
 			children = (
-				649E82E715FC42A40077EEF7 /* QuartzCore.framework */,
 				649E82C715FC36060077EEF7 /* goskate */,
 				649E82C015FC36060077EEF7 /* Frameworks */,
 				649E82BE15FC36060077EEF7 /* Products */,
@@ -87,9 +92,11 @@
 		649E82C015FC36060077EEF7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				649E82C115FC36060077EEF7 /* UIKit.framework */,
-				649E82C315FC36060077EEF7 /* Foundation.framework */,
 				649E82C515FC36060077EEF7 /* CoreGraphics.framework */,
+				649E831615FDB0210077EEF7 /* CoreLocation.framework */,
+				649E82C315FC36060077EEF7 /* Foundation.framework */,
+				649E82C115FC36060077EEF7 /* UIKit.framework */,
+				649E82E715FC42A40077EEF7 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -98,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				649E82F215FC55170077EEF7 /* Images */,
+				649E830B15FDAEB20077EEF7 /* Stores */,
 				649E82F015FC54F80077EEF7 /* Views */,
 				649E82F115FC54FE0077EEF7 /* View Controllers */,
 				649E82C815FC36060077EEF7 /* Supporting Files */,
@@ -149,6 +157,15 @@
 				649E82FF15FC8AC80077EEF7 /* yellowpie.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		649E830B15FDAEB20077EEF7 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				649E830C15FDAEE30077EEF7 /* LocationManagerStore.h */,
+				649E830D15FDAEE30077EEF7 /* LocationManagerStore.m */,
+			);
+			name = Stores;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +241,7 @@
 				649E82DA15FC36290077EEF7 /* GoViewController.m in Sources */,
 				649E82E615FC3D8C0077EEF7 /* DialViewController.m in Sources */,
 				649E82EF15FC54ED0077EEF7 /* GaugeView.m in Sources */,
+				649E830E15FDAEE30077EEF7 /* LocationManagerStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

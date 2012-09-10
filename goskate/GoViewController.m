@@ -8,6 +8,7 @@
 
 #import "DialViewController.h"
 #import "GoViewController.h"
+#import "LocationManagerStore.h"
 
 @interface GoViewController ()
 @property (strong) UIButton *goButton;
@@ -63,6 +64,7 @@
 
 - (void)goButtonPressed {
     [self.navigationController pushViewController:[DialViewController new] animated:NO];
+    [[LocationManagerStore sharedStore] startLocationUpdates];
 }
 
 @end

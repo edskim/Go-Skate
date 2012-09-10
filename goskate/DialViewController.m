@@ -8,7 +8,10 @@
 
 #import "DialViewController.h"
 #import "GaugeView.h"
+#import "LocationManagerStore.h"
 #import <QuartzCore/QuartzCore.h>
+
+#define TOP_SPEED 25.0
 
 @interface DialViewController ()
 @property (strong) UIButton *stopButton;
@@ -40,7 +43,6 @@
     
     self.gaugeView = [[GaugeView alloc] initWithFrame:CGRectMake(self.view.center.x-140.0, self.view.center.y-140.0,
                                                                    280, 280)];
-    NSLog(@"origin: %f,%f",self.view.center.x, self.view.center.y);
     [self.view addSubview:self.gaugeView];
     
     UIImageView *centerImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.center.x-125.0, self.view.center.y-125.0, 250, 250)];
@@ -51,6 +53,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
+    
+    [LocationManagerStore sharedStore].updateLocationBlock = ^(double speed){
+        [self updateGaugeSpeed:speed];
+    };
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -74,24 +80,17 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)changeGauge {
-    static bool change = NO;
-    change = !change;
-    if (change)
-        [self.gaugeView changePosition:(self.gaugeView.percent)-90];
-    else
-        [self.gaugeView changePosition:(self.gaugeView.percent)+90];
-}
-
 - (void)stopPressed {
-    static double position = 99.0;
-    [self.gaugeView changePosition:position];
-    
-    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(changeGauge) userInfo:nil repeats:YES];
     
     //[self.navigationController popToRootViewControllerAnimated:NO];
     
     
+}
+
+- (void)updateGaugeSpeed:(double)speedInMeters {
+    double speedMPH = (speedInMeters/1609.34)*3600.0;
+        NSLog(@"mph: %f",speedMPH);
+    [self.gaugeView changePosition:(100.0*speedMPH/TOP_SPEED)];
 }
 
 @end

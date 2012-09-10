@@ -16,6 +16,7 @@
 #define RED_SLICE_MAX M_PI
 #define RED_SLICE_MIN (3.0*M_PI/4.0)
 #define ANGLE_THRESHOLD 0.001
+#define SEC_TO_ROTATE_TOTAL 3.0
 
 @interface GaugeView ()
 @property (strong) NSMutableArray *animationQueue;
@@ -67,6 +68,7 @@
         redSliceLayer.bounds = self.sliceRect;
         redSliceLayer.position = self.slicePoint;
         
+        //hierarchy for slices
         whiteSliceLayer.zPosition = -1.0;
         self.greenSlice.layer.zPosition = -2.0;
         self.yellowSlice.layer.zPosition = -3.0;
@@ -77,6 +79,7 @@
         yellowSliceLayer.contents = (__bridge id)[[UIImage imageNamed:@"yellowpie.png"] CGImage];
         redSliceLayer.contents = (__bridge id)[[UIImage imageNamed:@"redpie.png"] CGImage];
         
+        //each slice layer is on its own view, view is rotated for effect
         [self.layer addSublayer:whiteSliceLayer];
         [self.greenSlice.layer addSublayer:greenSliceLayer];
         [self.yellowSlice.layer addSublayer:yellowSliceLayer];
@@ -101,16 +104,22 @@
 }
 
 - (void)changePosition:(double)per {
+    
+    //clear queues in case of interruption
     self.animationQueue = [NSMutableArray new];
     self.viewQueue = [NSMutableArray new];
     
+    //maximum range is pi, any more than that and it wraps
+    //since angles continue as neg after pi
     self.percent = fmod(per, 100.0);
     self.angle = (self.percent/100.0)*M_PI;
     
+    //new angles to be set. range is enforced here
     CGFloat greenAngle = MAX(MIN(self.angle, GREEN_SLICE_MAX),GREEN_SLICE_MIN);
     CGFloat yellowAngle = MAX(MIN(self.angle, YELLOW_SLICE_MAX),YELLOW_SLICE_MIN);
     CGFloat redAngle = MAX(MIN(self.angle, RED_SLICE_MAX),RED_SLICE_MIN);
     
+    //starting angles.
     CGFloat currentGreenRotation = [[((CALayer*)self.greenSlice.layer.presentationLayer)
                                     valueForKeyPath:@"transform.rotation.z"] floatValue];
     CGFloat currentYellowRotation = MAX([[((CALayer*)self.yellowSlice.layer.presentationLayer)
@@ -125,7 +134,7 @@
     
     if (ABS(greenAngle-currentGreenRotation) > ANGLE_THRESHOLD) {
         CABasicAnimation *rotateGreen = [rotation copy];
-        rotateGreen.duration = ABS(greenAngle-currentGreenRotation)*2.0/M_PI;
+        rotateGreen.duration = ABS(greenAngle-currentGreenRotation)*SEC_TO_ROTATE_TOTAL/M_PI;
         rotateGreen.fromValue = @(currentGreenRotation);
         rotateGreen.toValue = @(greenAngle);
         [self.animationQueue addObject:rotateGreen];
@@ -134,7 +143,7 @@
     
     if (ABS(yellowAngle-currentYellowRotation) > ANGLE_THRESHOLD) {
         CABasicAnimation *rotateYellow = [rotation copy];
-        rotateYellow.duration = ABS(yellowAngle-currentYellowRotation)*2.0/M_PI;
+        rotateYellow.duration = ABS(yellowAngle-currentYellowRotation)*SEC_TO_ROTATE_TOTAL/M_PI;
         rotateYellow.fromValue = @(currentYellowRotation);
         rotateYellow.toValue = @(yellowAngle);
         if (currentYellowRotation < yellowAngle) {
@@ -148,7 +157,7 @@
     
     if (ABS(redAngle-currentRedRotation) > ANGLE_THRESHOLD) {
         CABasicAnimation *rotateRed = [rotation copy];
-        rotateRed.duration = ABS(redAngle-currentRedRotation)*2.0/M_PI;
+        rotateRed.duration = ABS(redAngle-currentRedRotation)*SEC_TO_ROTATE_TOTAL/M_PI;
         rotateRed.fromValue = @(currentRedRotation);
         rotateRed.toValue = @(redAngle);
         if (currentRedRotation < redAngle) {
@@ -165,6 +174,8 @@
 }
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    
+    //At the end of the animation, set the new position
     self.greenSlice.layer.transform = ((CALayer*)self.greenSlice.layer.presentationLayer).transform;
     if (self.yellowSlice.superview) {
         self.yellowSlice.layer.transform = ((CALayer*)self.yellowSlice.layer.presentationLayer).transform;
@@ -172,9 +183,9 @@
             self.redSlice.layer.transform = ((CALayer*)self.redSlice.layer.presentationLayer).transform;
     }
 
+    //remove yellow or red views if not needed (hidden)
     CGFloat currentYellowRotation = [[((CALayer*)self.yellowSlice.layer.presentationLayer) valueForKeyPath:@"transform.rotation.z"] floatValue];
     CGFloat currentRedRotation = [[((CALayer*)self.redSlice.layer.presentationLayer) valueForKeyPath:@"transform.rotation.z"] floatValue];
-    
     if (ABS(currentYellowRotation-YELLOW_SLICE_MIN) < ANGLE_THRESHOLD) {
         [self.yellowSlice removeFromSuperview]; 
     }
@@ -182,6 +193,7 @@
         [self.redSlice removeFromSuperview];
     }
     
+    //after animation finishes, put the next one on from the queue. if last one finished, leave in queue
     if (flag) {
         if ([self.animationQueue count] > 1 && [self.viewQueue count] > 1) {
             [self.animationQueue removeObjectAtIndex:0];
